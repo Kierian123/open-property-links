@@ -12,13 +12,14 @@
       }
       const encodedAddress = encodeURIComponent(address);
 
-      const links = [
-        `https://www.google.com/maps/search/${encodedAddress}`,
-        `https://www.zillow.com/homes/${encodedAddress}_rb/`,
-        `https://www.zillow.com/homes/for_sale/${encodedAddress}_rb/`,
-        `https://www.redfin.com/stingray/do/location-autocomplete?location=${encodedAddress}`,
-        `https://www.wealthydeals.com/search?q=${encodedAddress}`
-      ];
+const links = [
+  `https://www.google.com/maps/search/${encodedAddress}`,
+  `https://www.zillow.com/homes/${encodedAddress}_rb/`,
+  `https://www.zillow.com/homes/for_sale/${encodedAddress}_rb/`,
+  `https://www.google.com/search?q=Redfin+${encodedAddress}`,
+  `https://app.wealthydeals.com/`
+];
+
 
       links.forEach(url => window.open(url, '_blank'));
     }
