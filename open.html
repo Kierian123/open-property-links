@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Open Property Links</title>
+  <script>
+    function openLinks() {
+      const params = new URLSearchParams(window.location.search);
+      const address = params.get('address');
+      if (!address) {
+        alert('No address provided.');
+        return;
+      }
+      const encodedAddress = encodeURIComponent(address);
+
+      const links = [
+        `https://www.google.com/maps/search/${encodedAddress}`,
+        `https://www.zillow.com/homes/${encodedAddress}_rb/`,
+        `https://www.zillow.com/homes/for_sale/${encodedAddress}_rb/`,
+        `https://www.redfin.com/stingray/do/location-autocomplete?location=${encodedAddress}`,
+        `https://www.wealthydeals.com/search?q=${encodedAddress}`
+      ];
+
+      links.forEach(url => window.open(url, '_blank'));
+    }
+
+    window.onload = openLinks;
+  </script>
+</head>
+<body>
+  <h2>Opening property links...</h2>
+  <p>If nothing happens, please check your popup blocker settings.</p>
+</body>
+</html>
